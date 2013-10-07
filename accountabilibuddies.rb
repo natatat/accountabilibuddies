@@ -1,16 +1,19 @@
-g_snakes = [
-  ["Salar", "Dan", "Alek"],
-  ["Natalie", "Laura", "Brantley"],
-  ["Ken", "Ryan", "Steven"],
-  ["Paul", "Annie", "Jenny"],
-  ["Thomas", "Taylor", "Marion"],
-  ["Cricket", "Brandon", "JTR"],
-  ["Carter", "Jeff", "Charles"],
-  ["Robert", "Gary", "Daniel"]
-]
+# g_snakes = [
+#   ["Salar", "Dan", "Alek"],
+#   ["Natalie", "Laura", "Brantley"],
+#   ["Taylor", "Ryan", "Brandon"],
+#   ["Cricket", "Jeff", "Marion"],
+#   ["Charles", "Ken", "Thomas"],
+#   ["Annie", "Jenny", "Jonathan"],
+#   ["Paul", "Steven", "Carter"],
+#   ["Robert", "Gary", "Daniel"]
+# ]
+
+g_snakes = ["Salar", "Dan", "Alek", "Natalie", "Laura", "Brantley", "Taylor", "Ryan", "Brandon", "Cricket", "Jeff", "Marion", "Robert", "Gary", "Daniel", "Charles", "Ken", "Thomas", "Steven", "Annie", "Jenny", "Jonathan", "Paul", "Carter"]
 
 fox_squirrels = []
-groups = []
+fs_group = []
+gs_group = []
 
 boot_counter = 0
 group_counter = 1
@@ -28,26 +31,43 @@ until input == "done"
   end
 end
 
-# shuffle?!
 
-fox_squirrels.each_slice(3) { |group| groups << group }
-groups[-2] << groups[-1][0]
-groups.pop
+
+g_snakes.shuffle.each_slice(3){ |group| gs_group << group}
+
+fox_squirrels.each_slice(3) { |group| fs_group << group }
+fs_group[-2] << fs_group[-1][0]
+fs_group.pop
 
   puts ""
   puts "-------------------------"
 
+
+
 (0..6).each do |n|
   puts ""
   puts "Group #{(n+1)}:"
-  puts "FS: #{groups[n][0][0].capitalize + groups[n][0][1..-1]}, #{groups[n][1][0].capitalize + groups[n][1][1..-1]}, #{groups[n][2][0].capitalize + groups[n][2][1..-1]}"
-  puts "GS: #{g_snakes[n][0]}, #{g_snakes[n][1]}, #{g_snakes[n][2]}"
+  puts "FS: #{fs_group[n][0][0].capitalize + fs_group[n][0][1..-1]}, #{fs_group[n][1][0].capitalize + fs_group[n][1][1..-1]}, #{fs_group[n][2][0].capitalize + fs_group[n][2][1..-1]}"
+  puts "GS: #{gs_group[n][0]}, #{gs_group[n][1]}, #{gs_group[n][2]}"
 end
 
   puts ""
   puts "Group #{(8)}:"
-  puts "FS: #{groups[7][0][0].capitalize + groups[7][0][1..-1]}, #{groups[7][1][0].capitalize + groups[7][1][1..-1]}, #{groups[7][2][0].capitalize + groups[7][2][1..-1]}, #{groups[7][3][0].capitalize + groups[7][3][1..-1]}"
-  puts "GS: #{g_snakes[7][0]}, #{g_snakes[7][1]}, #{g_snakes[7][2]}"
+  puts "FS: #{fs_group[7][0][0].capitalize + fs_group[7][0][1..-1]}, #{fs_group[7][1][0].capitalize + fs_group[7][1][1..-1]}, #{fs_group[7][2][0].capitalize + fs_group[7][2][1..-1]}, #{fs_group[7][3][0].capitalize + fs_group[7][3][1..-1]}"
+  puts "GS: #{gs_group[7][0]}, #{gs_group[7][1]}, #{gs_group[7][2]}"
+
+
+# (0..6).each do |n|
+#   puts ""
+#   puts "Group #{(n+1)}:"
+#   puts "FS: #{fs_group[n][0][0].capitalize + fs_group[n][0][1..-1]}, #{fs_group[n][1][0].capitalize + fs_group[n][1][1..-1]}, #{fs_group[n][2][0].capitalize + fs_group[n][2][1..-1]}"
+#   puts "GS: #{g_snakes[n][0]}, #{g_snakes[n][1]}, #{g_snakes[n][2]}"
+# end
+
+#   puts ""
+#   puts "Group #{(8)}:"
+#   puts "FS: #{fs_group[7][0][0].capitalize + fs_group[7][0][1..-1]}, #{fs_group[7][1][0].capitalize + fs_group[7][1][1..-1]}, #{fs_group[7][2][0].capitalize + fs_group[7][2][1..-1]}, #{fs_group[7][3][0].capitalize + fs_group[7][3][1..-1]}"
+#   puts "GS: #{g_snakes[7][0]}, #{g_snakes[7][1]}, #{g_snakes[7][2]}"
 
   puts ""
   puts "-------------------------"
