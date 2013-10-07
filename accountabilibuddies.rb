@@ -28,21 +28,28 @@ until input == "done"
   end
 end
 
+# shuffle?!
+
 fox_squirrels.each_slice(3) { |group| groups << group }
 groups[-2] << groups[-1][0]
 groups.pop
 
-(0..7).each do |n|
+  puts ""
+  puts "-------------------------"
+
+(0..6).each do |n|
   puts ""
   puts "Group #{(n+1)}:"
-    puts "#{groups[n][0]}, #{groups[n][1]}, #{groups[n][2]}"
-    puts "#{g_snakes[n][0]}, #{g_snakes[n][1]}, #{g_snakes[n][2]}"
+  puts "FS: #{groups[n][0][0].capitalize + groups[n][0][1..-1]}, #{groups[n][1][0].capitalize + groups[n][1][1..-1]}, #{groups[n][2][0].capitalize + groups[n][2][1..-1]}"
+  puts "GS: #{g_snakes[n][0]}, #{g_snakes[n][1]}, #{g_snakes[n][2]}"
 end
 
   puts ""
   puts "Group #{(8)}:"
-  puts "#{groups[7][0]}, #{groups[7][1]}, #{groups[7][2]}, #{groups[7][3]}"
-  puts "#{g_snakes[7][0]}, #{g_snakes[7][1]}, #{g_snakes[7][2]}"
+  puts "FS: #{groups[7][0][0].capitalize + groups[7][0][1..-1]}, #{groups[7][1][0].capitalize + groups[7][1][1..-1]}, #{groups[7][2][0].capitalize + groups[7][2][1..-1]}, #{groups[7][3][0].capitalize + groups[7][3][1..-1]}"
+  puts "GS: #{g_snakes[7][0]}, #{g_snakes[7][1]}, #{g_snakes[7][2]}"
 
+  puts ""
+  puts "-------------------------"
   puts ""
 
